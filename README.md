@@ -21,3 +21,7 @@ build-folder/
 ├── atom.xml
 └── feed.json
 ```
+
+
+https://validator.jsonfeed.org
+https://twitter.com/jsonfeed

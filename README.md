@@ -60,7 +60,7 @@ Additional configuration properties:
 
 ```json
 {
-    "use_comment": "A comment viewers of the raw feed should see",
+    "user_comment": "A comment viewers of the raw feed should see",
     "icon": "https://examaple.com/pic512x512.png",
     "favicon": "https://examaple.com/pic64x64.png",
     "expired": false

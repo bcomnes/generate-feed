@@ -1,7 +1,7 @@
 {
   "name": "generate-feed",
   "description": "Generate various blog index feeds",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Bret Comnes",
   "bugs": {
     "url": "https://github.com/bcomnes/generate-feed/issues"

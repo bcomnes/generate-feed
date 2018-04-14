@@ -48,6 +48,7 @@
   ],
   "license": "MIT",
   "main": "index.js",
+  "bin": "./bin/generate-feed",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bcomnes/generate-feed.git"

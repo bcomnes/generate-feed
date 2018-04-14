@@ -1,19 +1,10 @@
 [
-  {
-    "type": "jsonfeed",
-    "date_published": "2018-04-07T13:32:23-07:00",
-    "title": "A very basic post",
-    "content_text": "Some text.\n  Maybe a new paragraph.",
-    "url": "/foo/bar"
-  },
    {
-    "type": "text",
     "date": "2018-04-07T13:48:02-07:00",
     "content": "Wee wooo this is some content. \n Maybe a new paragraph too",
     "url": "/my-text-post"
   },
   {
-    "type": "html",
     "date": "2018-04-07T15:06:43-07:00",
     "content": "<p>Hello, world!</p>",
     "title": "This is a blog title",

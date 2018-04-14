@@ -1,0 +1,75 @@
+#!/usr/bin/env node
+
+const generateFeed = require('../index')
+const parseOpts = require('minimist')
+const glob = require('glob')
+const cliclopts = require('cliclopts')
+const path = require('path')
+const fs = require('fs')
+
+const clopts = cliclopts([
+  {
+    name: 'dest',
+    abbr: 'b',
+    help: 'path to build directory',
+    default: 'build',
+    alias: 'build'
+  },
+  {
+    name: 'version',
+    abbr: 'v',
+    boolean: true,
+    help: 'show version information'
+  },
+  {
+    name: 'help',
+    abbr: 'h',
+    help: 'show help',
+    boolean: true
+  }
+])
+
+var argv = parseOpts(process.argv.slice(2), {
+  alias: clopts.alias(),
+  boolean: clopts.boolean(),
+  default: clopts.default()
+})
+
+if (argv.version) {
+  console.log(require('../package.json').version)
+  process.exit(0)
+}
+
+if (argv.help) {
+  console.log('Usage: generate-feed [source] [options]\n')
+  console.log('    Example: generate-feed source/ -b build/\n')
+  console.log('    source                path to source directory (default: log)')
+  clopts.print()
+  process.exit(0)
+}
+
+argv.source = argv.source || argv._[0] || 'log'
+
+const src = path.normalize(argv.source)
+const dest = path.normalize(argv.dest)
+const config = JSON.parse(fs.readFileSync(path.join(src, 'config.json')))
+
+const globStr = path.join(src, '*.json')
+const jsonFilePaths = glob.sync(globStr, {realpath: false})
+
+const logMap = {}
+
+jsonFilePaths.forEach(jsonPath => {
+  const name = path.basename(jsonPath, '.json')
+  if (name === 'config') { return }
+  logMap[name] = jsonPath
+})
+
+generateFeed(config, logMap, dest, err => {
+  if (err) {
+    console.log('generate-feed: failed when generating feeds')
+    console.error(err.message)
+    process.exit(1)
+  }
+  console.log('generate-feed: feeds written to ' + path.relative(process.cwd(), dest))
+})

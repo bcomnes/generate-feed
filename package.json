@@ -1,62 +1,62 @@
 {
   "name": "generate-feed",
-  "version": "1.0.0",
   "description": "Generate various blog index feeds",
-  "main": "index.js",
-  "scripts": {
-    "test": "run-s test:*",
-    "test:tape": "nyc tape '{lib,test}/**/*.spec.js' | tap-format-spec",
-    "test:lint": "standard",
-    "debug": "node --nolazy --inspect-brk=9229 node_modules/.bin/tape '{lib,test}/**/*.spec.js' | tap-format-spec",
-    "report": "nyc report --reporter=text-lcov | coveralls"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bcomnes/generate-feed.git"
-  },
-  "keywords": [
-    "blog",
-    "log",
-    "feed",
-    "json-feed",
-    "atom",
-    "rss"
-  ],
+  "version": "1.0.0",
   "author": "Bret Comnes",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/bcomnes/generate-feed/issues"
   },
-  "homepage": "https://github.com/bcomnes/generate-feed#readme",
+  "dependencies": {
+    "cliclopts": "^1.1.1",
+    "flush-write-stream": "^1.0.3",
+    "from2-array": "0.0.4",
+    "from2-string": "^1.1.0",
+    "glob": "^7.1.2",
+    "gravatar-url": "^2.0.0",
+    "is-html": "^1.1.0",
+    "jsonfeed-to-atom": "^1.0.0",
+    "minimist": "^1.2.0",
+    "mkdirp": "^0.5.1",
+    "object-hash": "^1.3.0",
+    "parallel-transform": "^1.1.0",
+    "parse-author": "^2.0.0",
+    "pump": "^3.0.0",
+    "run-parallel": "^1.1.8",
+    "run-waterfall": "^1.1.4"
+  },
   "devDependencies": {
     "@tap-format/spec": "^0.2.0",
+    "dependency-check": "^3.1.0",
     "existy": "^1.0.1",
     "feed-validator": "^1.1.1",
     "npm-run-all": "^4.0.2",
+    "nyc": "^11.6.0",
     "standard": "^10.0.0",
     "tape": "^4.7.0",
     "tape-run": "^3.0.0",
     "temporary-directory": "^1.0.2"
   },
-  "dependencies": {
-    "cliclopts": "^1.1.1",
-    "es6-template-strings": "^2.0.1",
-    "flush-write-stream": "^1.0.3",
-    "from2-array": "0.0.4",
-    "from2-string": "^1.1.0",
-    "fs-directory-stream": "^1.0.1",
-    "glob": "^7.1.2",
-    "gravatar-url": "^2.0.0",
-    "is-html": "^1.1.0",
-    "minimist": "^1.2.0",
-    "mkdirp": "^0.5.1",
-    "nyc": "^11.6.0",
-    "object-hash": "^1.3.0",
-    "parallel-transform": "^1.1.0",
-    "parse-author": "^2.0.0",
-    "pump": "^3.0.0",
-    "run-parallel-limit": "^1.0.4",
-    "run-series": "^1.1.6",
-    "run-waterfall": "^1.1.4"
+  "homepage": "https://github.com/bcomnes/generate-feed#readme",
+  "keywords": [
+    "atom",
+    "blog",
+    "feed",
+    "json-feed",
+    "log",
+    "rss"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bcomnes/generate-feed.git"
+  },
+  "scripts": {
+    "debug": "node --nolazy --inspect-brk=9229 node_modules/.bin/tape '{lib,test}/**/*.spec.js' | tap-format-spec",
+    "report": "nyc report --reporter=text-lcov | coveralls",
+    "test": "run-s test:*",
+    "test:deps": "dependency-check package.json --missing --unused --entry bin/generate-feed --no-dev",
+    "test:lint": "standard",
+    "test:tape": "nyc tape '{lib,test}/**/*.spec.js' | tap-format-spec"
   }
 }

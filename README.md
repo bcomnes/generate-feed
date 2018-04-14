@@ -69,6 +69,8 @@ Additional configuration properties:
 
 ## Log types
 
+All log entries must have a type field, to specify how it is processed.  Any fields missing a log field are processed as a `Log` entry.
+
 ### Log
 
 All fields are optional.  These are recommended:

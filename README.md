@@ -39,5 +39,9 @@ Usage: generate-feed [source] [options]
 
 ```
 
+## References
+
+https://jsonfeed.org
 https://validator.jsonfeed.org
 https://twitter.com/jsonfeed
+https://web.archive.org/web/20160113103647/http://atomenabled.org/developers/syndication/ 

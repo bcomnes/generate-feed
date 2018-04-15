@@ -29,7 +29,10 @@
   },
   "devDependencies": {
     "@tap-format/spec": "^0.2.0",
+    "coveralls": "^3.0.0",
+    "cpx": "^1.5.0",
     "dependency-check": "^3.1.0",
+    "dependency-cruiser": "^3.1.0",
     "existy": "^1.0.1",
     "feed-validator": "^1.1.1",
     "npm-run-all": "^4.0.2",
@@ -37,8 +40,7 @@
     "standard": "^10.0.0",
     "tape": "^4.7.0",
     "tape-run": "^3.0.0",
-    "temporary-directory": "^1.0.2",
-    "coveralls": "^3.0.0"
+    "temporary-directory": "^1.0.2"
   },
   "homepage": "https://github.com/bcomnes/generate-feed#readme",
   "keywords": [
@@ -62,6 +64,11 @@
     "test": "run-s test:*",
     "test:deps": "dependency-check package.json --missing --unused --entry bin/generate-feed --no-dev",
     "test:lint": "standard",
-    "test:tape": "nyc tape '{lib,test}/**/*.spec.js' | tap-format-spec"
+    "test:tape": "nyc tape '{lib,test}/**/*.spec.js' | tap-format-spec",
+    "test:deptree": "depcruise --validate .dependency-cruiser.json bin/generate-feed",
+    "site": "run-s clean && run-p site:*",
+    "site:depgraph": "depcruise --exclude '^node_modules' --output-type dot bin/generate-feed | dot -T svg > build/dependencygraph.svg",
+    "site:static": "cpx 'static/*' build",
+    "clean": "rimraf build && mkdirp build"
   }
 }

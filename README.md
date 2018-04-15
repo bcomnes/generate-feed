@@ -73,6 +73,34 @@ Additional configuration properties:
 
 All log entries must have a type field, to specify how it is processed.  Any fields missing a log field are processed as a `Log` entry.
 
+Log files should be alphanumerical so they sort from oldest to latest.
+
+```console
+$ tree log-folder
+
+log-folder/
+├── 2016.json
+├── 2017.json
+├── 2018.json
+└── config.json
+```
+
+The log json should be a single array with typed objects ascending (oldest at the top, newest at the bottom).
+
+```json
+[
+    {
+        date: "2018-04-07T15:06:43-07:00"
+    },
+    {
+        date: "2018-04-08T15:06:43-07:00"
+    },
+    {
+        date: "2018-04-09T15:06:43-07:00"
+    }
+]
+```
+
 ### Log
 
 All fields are optional.  These are recommended:

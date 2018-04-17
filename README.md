@@ -144,7 +144,7 @@ Additional properties:
 - [twitter.com/jsonfeed](https://twitter.com/jsonfeed)
 - [http://atomenabled.org](https://web.archive.org/web/20160113103647/http://atomenabled.org/developers/syndication/ )
 - [bcomnes/jsonfeed-to-atom](https://github.com/bcomnes/jsonfeed-to-atom)
-
+- [json-feed-viewer.herokuapp.com](https://json-feed-viewer.herokuapp.com/)
 
 ## License
 [MIT](https://tldrlegal.com/license/mit-license)

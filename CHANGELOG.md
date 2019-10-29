@@ -2,6 +2,9 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.0.5 - 2019-29-10
+* Maintenance release: update deps
+
 ## 1.0.4 - 2018-04-14
 * Reverse log order
 

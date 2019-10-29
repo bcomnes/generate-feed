@@ -11,7 +11,7 @@ const pump = require('pump')
 
 function processFiles (config, logMap, dest, cb) {
   const jobsStream = fromArray.obj(jobsCreator(logMap))
-  const parseStream = transform(10, {objectMode: true}, readParse)
+  const parseStream = transform(10, { objectMode: true }, readParse)
   const generateFeedStream = transform(10, { objectMode: true }, feedFromJob(config))
   const generateAtomStream = transform(10, { objectMode: true }, generateAtomFeed)
   const writeFeeds = writer({ objectMode: true }, feedWriter(config, dest))

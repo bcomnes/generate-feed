@@ -138,6 +138,20 @@ Additional properties:
 }
 ```
 
+### Markdown
+
+Example markdown log example
+
+```json
+{
+    "content": "Websockets",
+    "type": "md",
+    "date": "2019-10-29T18:50:05.140Z",
+    "path": "../projects/websockets/README.md",
+    "url": "https://bret.io/projects/websockets/"
+}
+```
+
 ## References
 
 - [jsonfeed.org](https://jsonfeed.org)

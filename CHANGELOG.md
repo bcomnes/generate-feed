@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.2.5 - 2020-01-14
+
+* Add support for markdown posts.
+
 ## 1.0.5 - 2019-29-10
 * Maintenance release: update deps
 

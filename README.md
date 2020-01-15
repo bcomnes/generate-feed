@@ -168,11 +168,13 @@ Example markdown log example
 [1]: https://nodejs.org/api/documentation.html#documentation_stability_index
 [2]: https://img.shields.io/npm/v/generate-feed.svg?style=flat-square
 [3]: https://npmjs.org/package/generate-feed
-[4]: https://img.shields.io/travis/bcomnes/generate-feed/master.svg?style=flat-square
-[5]: https://travis-ci.org/bcomnes/generate-feed
+[4]: https://github.com/bcomnes/generate-feed/workflows/tests/badge.svg?style=flat-square
+[5]: https://github.com/bcomnes/generate-feed/actions
 [8]: http://img.shields.io/npm/dm/generate-feed.svg?style=flat-square
 [9]: https://npmjs.org/package/generate-feed
 [10]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square
 [11]: https://github.com/feross/standard
 [12]: https://img.shields.io/coveralls/bcomnes/generate-feed/master.svg?style=flat-square
 [13]: https://coveralls.io/github/bcomnes/generate-feed
+
+[![Actions Status](https://github.com/bcomnes/{{name}}/workflows/tests/badge.svg)](https://github.com/bcomnes/{{name}}/actions)

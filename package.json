@@ -79,5 +79,9 @@
     "site:depgraph": "depcruise --exclude '^node_modules' --output-type dot bin/generate-feed | dot -T svg > build/dependencygraph.svg",
     "site:static": "cpx 'static/*' build",
     "clean": "rimraf build && mkdirp build"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://github.com/sponsors/bcomnes"
   }
 }

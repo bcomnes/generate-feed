@@ -9,7 +9,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [12]
+        node: [14]
 
     steps:
     - uses: actions/checkout@v2.3.2
@@ -17,13 +17,9 @@ jobs:
       uses: actions/setup-node@v2.1.1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: npm install, build, and test
-      run: |
-        npm i
-        npm test
-        npm run report
-      env:
-        CI: true
+    - run: npm i
+    - run: npm test
+    - run: npm run report
     - name: Coveralls
       uses: coverallsapp/github-action@master
       with:

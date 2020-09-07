@@ -24,11 +24,9 @@ jobs:
         registry-url: 'https://registry.npmjs.org'
     - run: git config --global user.email "bcomnes@gmail.com"
     - run: git config --global user.name "${{ github.actor }}"
-    - run: npm set package-lock false
     - run: npm i
     - run: npm test
     - run: npm version ${{ github.event.inputs.newversion }}
-    - run: npm config list
     - run: npm publish
       env:
         GH_RELEASE_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}

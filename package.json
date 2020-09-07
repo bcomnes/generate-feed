@@ -39,6 +39,8 @@
     "trim-right": "^1.0.1"
   },
   "devDependencies": {
+    "auto-changelog": "^1.16.2",
+    "gh-release": "^3.5.0",
     "@tap-format/spec": "^0.2.0",
     "coveralls": "^3.0.7",
     "cpx2": "^2.0.0",
@@ -78,7 +80,9 @@
     "site": "run-s clean && run-p site:*",
     "site:depgraph": "depcruise --exclude '^node_modules' --output-type dot bin/generate-feed | dot -T svg > build/dependencygraph.svg",
     "site:static": "cpx 'static/*' build",
-    "clean": "rimraf build && mkdirp build"
+    "clean": "rimraf build && mkdirp build",
+    "prepublishOnly": "git push --follow-tags && gh-release -y",
+    "version": "auto-changelog -p --template keepachangelog auto-changelog --breaking-pattern 'BREAKING CHANGE:' && git add CHANGELOG.md"
   },
   "funding": {
     "type": "individual",

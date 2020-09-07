@@ -8,7 +8,7 @@ on:
         required: true
 
 env:
-  node_version: 0.12.26
+  node_version: 14
 
 jobs:
   version_and_release:

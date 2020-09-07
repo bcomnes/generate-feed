@@ -23,7 +23,7 @@ jobs:
         node-version: ${{ env.node_version }}
         registry-url: 'https://registry.npmjs.org'
     - run: git config --global user.email "bcomnes@gmail.com"
-    - run: git config --global user.name "${{ github.actor }}"
+    - run: git config --global user.name "${{ github.actor }} (GH Action)"
     - run: npm i
     - run: npm test
     - run: npm version ${{ github.event.inputs.newversion }}

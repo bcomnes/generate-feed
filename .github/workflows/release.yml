@@ -16,6 +16,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2.3.2
     - run: echo '${{ github.event.inputs.version_bump }}' > foo.bar
+    - run: git config --global user.email "bcomnes@gmail.com"
+    - run: git config --global user.name "Bret Comnes"
     - run: git add -A
     - run: git commit -m 'test commit'
     - run: git push

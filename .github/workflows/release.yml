@@ -8,12 +8,11 @@ on:
         required: true
 
 env:
-  system_version: ubuntu-latest
   node_version: 0.12.26
 
 jobs:
   version_and_release:
-    runs-on: ${{ env.system_version }}
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2.3.2
     - run: echo '${{ github.event.inputs.version_bump }}' > foo.bar

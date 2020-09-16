@@ -15,10 +15,10 @@ function processFiles (config, logMap, dest, cb) {
   const generateFeedStream = transform(10, { objectMode: true }, feedFromJob(config))
   const generateAtomStream = transform(10, { objectMode: true }, generateAtomFeed)
   const writeFeeds = writer({ objectMode: true }, feedWriter(config, dest))
-  mkdirp(dest, (err) => {
-    if (err) return cb(err)
+  console.log(dest)
+  mkdirp(dest).then(() => {
     pump(jobsStream, parseStream, generateFeedStream, generateAtomStream, writeFeeds, cb)
-  })
+  }).catch(cb)
 }
 
 module.exports = processFiles

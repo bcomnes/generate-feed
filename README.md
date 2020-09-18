@@ -177,4 +177,3 @@ Example markdown log example
 [12]: https://img.shields.io/coveralls/bcomnes/generate-feed/master.svg?style=flat-square
 [13]: https://coveralls.io/github/bcomnes/generate-feed
 
-[![Actions Status](https://github.com/bcomnes/{{name}}/workflows/tests/badge.svg)](https://github.com/bcomnes/{{name}}/actions)

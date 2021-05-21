@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "auto-changelog": "^2.2.0",
-    "gh-release": "^5.0.0",
+    "gh-release": "^6.0.0",
     "@tap-format/spec": "^0.2.0",
     "coveralls": "^3.0.7",
     "cpx2": "^3.0.0",

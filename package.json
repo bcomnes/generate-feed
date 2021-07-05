@@ -36,7 +36,7 @@
     "run-waterfall": "^1.1.6",
     "striptags": "^3.1.1",
     "trim-left": "^1.0.1",
-    "trim-right": "^1.0.1"
+    "trim-right": "^2.0.0"
   },
   "devDependencies": {
     "auto-changelog": "^2.2.0",

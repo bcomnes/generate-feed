@@ -26,7 +26,7 @@
     "markdown-it-sub": "^1.0.0",
     "markdown-it-sup": "^1.0.0",
     "minimist": "^1.2.0",
-    "mkdirp": "^1.0.0",
+    "mkdirp": "^2.0.0",
     "object-hash": "^3.0.0",
     "parallel-transform": "^1.2.0",
     "parse-author": "^2.0.0",

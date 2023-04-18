@@ -11,7 +11,7 @@
     "flush-write-stream": "^2.0.0",
     "from2-array": "0.0.4",
     "from2-string": "^1.1.0",
-    "glob": "^9.0.1",
+    "glob": "^10.2.1",
     "gravatar-url": "^3.0.1",
     "is-html": "^2.0.0",
     "jsonfeed-to-atom": "^1.1.3",

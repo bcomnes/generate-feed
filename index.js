@@ -6,8 +6,8 @@ const transform = require('parallel-transform')
 const readParse = require('./lib/read-parse')
 const writer = require('flush-write-stream')
 const fromArray = require('from2-array')
-const mkdirp = require('mkdirp')
 const pump = require('pump')
+const { mkdir } = require('fs/promises')
 
 function processFiles (config, logMap, dest, cb) {
   const jobsStream = fromArray.obj(jobsCreator(logMap))
@@ -16,7 +16,7 @@ function processFiles (config, logMap, dest, cb) {
   const generateAtomStream = transform(10, { objectMode: true }, generateAtomFeed)
   const writeFeeds = writer({ objectMode: true }, feedWriter(config, dest))
   console.log(dest)
-  mkdirp(dest).then(() => {
+  mkdir(dest, { recursive: true }).then(() => {
     pump(jobsStream, parseStream, generateFeedStream, generateAtomStream, writeFeeds, cb)
   }).catch(cb)
 }

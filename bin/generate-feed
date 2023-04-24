@@ -2,7 +2,7 @@
 
 const generateFeed = require('../index')
 const parseOpts = require('minimist')
-const glob = require('glob')
+const { globSync } = require('glob')
 const cliclopts = require('cliclopts')
 const path = require('path')
 const fs = require('fs')
@@ -29,7 +29,7 @@ const clopts = cliclopts([
   }
 ])
 
-var argv = parseOpts(process.argv.slice(2), {
+const argv = parseOpts(process.argv.slice(2), {
   alias: clopts.alias(),
   boolean: clopts.boolean(),
   default: clopts.default()
@@ -55,7 +55,7 @@ const dest = path.normalize(argv.dest)
 const config = JSON.parse(fs.readFileSync(path.join(src, 'config.json')))
 
 const globStr = path.join(src, '*.json')
-const jsonFilePaths = glob.sync(globStr, {realpath: false})
+const jsonFilePaths = globSync(globStr, { realpath: false })
 
 const logMap = {}
 

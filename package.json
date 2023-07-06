@@ -42,7 +42,7 @@
     "gh-release": "^7.0.0",
     "@tap-format/spec": "^0.2.0",
     "coveralls": "^3.0.7",
-    "cpx2": "^4.0.0",
+    "cpx2": "^5.0.0",
     "dependency-check": "^4.1.0",
     "dependency-cruiser": "^13.0.0",
     "existy": "^1.0.1",
